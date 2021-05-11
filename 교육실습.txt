@@ -1,0 +1,54 @@
+https://factory-console.cloudzcp.io
+carbob03 / Carbob!@34
+
+edu009 / !Edu009!@34
+
+https://factory-console.cloudzcp.io/my/cli
+
+kubectl version
+kubectl version -o json
+
+kubectl config get-contexts
+kubectl config set-contexts --current --namespace.......
+
+kubectl create deployment nginx009 --image=nginx
+
+kubectl get deployment
+kubectl describe deployment nginx009
+kubectl get rs,pod
+
+kubectl delete pod nginx009-647fd4784f-2hcsj
+ -> pod가 삭제됨
+kubectl get pod
+ -> pod 이름이 달라져 있음
+
+kubectl scale --replicas=2 deployment/nginx009
+kubectl get pod
+kubectl scale --replicas=1 deployment/nginx009
+kubectl get pod
+
+
+kubectl create service nodeport nginx009 --tcp=80:80 
+kubectl get service
+
+kubectl port-forward service/nginx009 30080:80
+http://localhost:30080/
+
+$ kubectl create cm mariadb-edu00 
+--from-literal=root_password=my-password 
+--from-literal=mysql_zcp=zcplocal 
+--from-literal=mysql_password=password-user 
+--from-literal=basededatos=test
+
+
+kubectl create configmap urlconfig009 --from-literal=port=80 --from-literal=ip=127.0.0.1 --from-literal=protocol=https
+kubectl get configmap
+kubectl describe configmap urlconfig009 
+
+kubectl create configmap textconfig009 --from-file=myconfig.txt
+kubectl describe configmap textconfig009
+kubectl delete configmap urlconfig009
+
+
+
+https://github.com/AMF-skcc/amf-edu-cloud
